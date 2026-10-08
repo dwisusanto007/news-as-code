@@ -2,8 +2,10 @@
 # TODO sebelum dipindah ke data/promises/:
 #   1. Buat snapshot tiap URL (Wayback/archive.ph/perma.cc), lalu isi archive_url, archived_at, sha256.
 #   2. Dua reviewer memeriksa tiap bukti dan mengisi review.reviewers + reviewed_at.
-#   3. Reviewer memutuskan status akhir (usulan saat ini: broken) dan apakah commitment
-#      'target' tepat (Kepala BGN memakai kata "mudah-mudahan"; bila 'aspiration', status broken ditolak validator).
+#   3. Reviewer memutuskan status akhir. Usulan `partially_fulfilled` memakai rubrik usulan di docs/GOVERNANCE.md
+#      (>=50% dan <100% pada tenggat; 55,1 dari 82,9 juta = 66%). `broken` hanya jika reviewer menetapkan ambang lain.
+#      Reviewer juga menilai apakah commitment 'target' tepat (Kepala BGN memakai kata "mudah-mudahan"; bila
+#      'aspiration', status broken ditolak validator).
 #   4. Kirim permintaan tanggapan ke BGN (hak jawab), lalu isi `response`.
 #   5. Rekonsiliasi definisi "penerima manfaat" antar observasi di `metrics` (lihat definition_note).
 #   6. Cocokkan kutipan (`quote`) ke sumber asli; kutipan diambil dari ringkasan halaman, belum dibaca penuh.
@@ -26,7 +28,7 @@ promise:
   made_at: "2025-08-19"
   deadline: "2025-12-31"
   source_evidence_id: E1
-status: broken
+status: partially_fulfilled
 status_note: >-
   Per 8 Jan 2026 BGN mencatat sekitar 55,1 juta penerima (sekitar 66% dari
   82,9 juta) dan 59,86 juta per 20 Jan, jadi target tidak tercapai pada

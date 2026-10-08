@@ -3,7 +3,18 @@
 Dokumen ini menjelaskan apa yang **ditegakkan otomatis** oleh CI dan apa yang **tetap keputusan manusia**.
 Bagian bertanda *usulan* belum disepakati dan harus diputuskan sebelum kasus nyata diterbitkan.
 
-## 1. Apa yang ditegakkan mesin
+## 0. Status penegakan saat ini
+
+Selama fase pengumpulan data, CI otomatis (`ci.yml`, job `schema`) hanya memeriksa bentuk file terhadap JSON Schema.
+Semua aturan di bagian 1 hanya berlaku bila `ci-full.yml` dijalankan manual (Actions → ci-full → Run workflow; isi nomor PR
+untuk ikut memeriksa reviewer). Akibatnya **tidak ada yang mencegah** status akhir, hash palsu, atau reviewer karangan
+masuk ke `main` sampai penegakan diaktifkan lagi. Karena itu: simpan entri di `data/drafts/` dan jangan menyalin ke
+`data/promises/` sebelum `ci-full` lolos.
+
+Untuk mengaktifkan lagi: tambahkan `pull_request`, `pull_request_review`, dan `push` ke blok `on:` di `ci-full.yml`
+(tambahkan `if:` pada job sesuai event), lalu jadikan job-nya status check wajib di branch protection.
+
+## 1. Apa yang ditegakkan mesin (saat ci-full aktif)
 
 | Aturan | Alat | Catatan |
 |---|---|---|
@@ -31,7 +42,7 @@ Settings → Branches → Branch protection rule untuk `main`:
 
 - [x] Require a pull request before merging, minimal 1 approval
 - [x] Dismiss stale pull request approvals when new commits are pushed
-- [x] Require status checks: `validate-and-build`, `verify-evidence`, `check-reviewers`
+- [x] Require status checks: `schema` (selalu), plus `validate-and-build`, `verify-evidence`, `check-reviewers` setelah `ci-full` diaktifkan lagi
 - [x] Do not allow force pushes / deletions
 - [x] Include administrators
 - [ ] Require review from Code Owners: **nyalakan hanya jika ada lebih dari satu maintainer.** GitHub tidak mengizinkan penulis meng-approve PR-nya sendiri, jadi dengan satu maintainer opsi ini membuat PR miliknya sendiri tidak bisa di-merge.

@@ -1,0 +1,77 @@
+name: Usulkan janji pejabat publik
+description: Laporkan janji atau target publik seorang pejabat untuk dilacak. Tidak perlu paham Git.
+title: "Janji: "
+labels: ["usulan-janji"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Terima kasih. Isi sebisanya; maintainer akan melengkapi dan mengubahnya menjadi data.
+
+        **Aturan:** hanya figur publik dalam kapasitas jabatannya, hanya sumber publik, tanpa data pribadi,
+        dan tulis apa yang diucapkan, bukan dugaan niat. Lihat `CONTRIBUTING.md`.
+  - type: input
+    id: official
+    attributes:
+      label: Nama pejabat
+      placeholder: "Contoh: Nama Lengkap"
+    validations:
+      required: true
+  - type: input
+    id: position
+    attributes:
+      label: Jabatan dan instansi
+      placeholder: "Contoh: Kepala Dinas X, Pemerintah Kota Y"
+    validations:
+      required: true
+  - type: textarea
+    id: statement
+    attributes:
+      label: Isi janji atau target
+      description: Tulis netral dan bisa diuji (ada angka atau tenggat bila ada). Kutip kalimat aslinya jika bisa.
+    validations:
+      required: true
+  - type: dropdown
+    id: commitment
+    attributes:
+      label: Seberapa tegas pernyataannya?
+      description: Kalau ragu, pilih "tidak yakin".
+      options:
+        - Janji tegas ("kami akan ...")
+        - Target (angka atau tenggat yang ditetapkan)
+        - Harapan ("mudah-mudahan ...")
+        - Proyeksi atau perkiraan
+        - Tidak yakin
+    validations:
+      required: true
+  - type: input
+    id: made_at
+    attributes:
+      label: Tanggal diucapkan
+      placeholder: "YYYY-MM-DD, atau perkiraan"
+  - type: input
+    id: deadline
+    attributes:
+      label: Tenggat (jika ada)
+      placeholder: "YYYY-MM-DD"
+  - type: textarea
+    id: sources
+    attributes:
+      label: Tautan sumber
+      description: Satu tautan per baris. Utamakan sumber asli (siaran pers, transkrip, rekaman) dibanding berita yang mengutipnya.
+    validations:
+      required: true
+  - type: textarea
+    id: progress
+    attributes:
+      label: Perkembangan yang Anda ketahui (opsional)
+      description: Angka, tanggal, dan tautan sumbernya. Sebutkan juga jika ada angka yang saling bertentangan.
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Konfirmasi
+      options:
+        - label: Ini figur publik dan pernyataan itu dibuat dalam kapasitas jabatannya.
+          required: true
+        - label: Semua sumber bersifat publik. Saya tidak menyertakan data pribadi.
+          required: true

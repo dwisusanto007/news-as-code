@@ -2,6 +2,9 @@
 
 Aturan lengkap tentang apa yang ditegakkan mesin dan apa yang dinilai manusia ada di [`docs/GOVERNANCE.md`](docs/GOVERNANCE.md).
 
+**Cara termudah, tanpa Git:** buka Issues → New issue → *Usulkan janji pejabat publik* dan isi formulirnya.
+Cara berikut untuk yang ingin langsung menulis data.
+
 ## Aturan etika (tidak bisa ditawar)
 
 1. **Hanya figur publik dalam kapasitas jabatannya.** Tidak ada alamat, keluarga, kesehatan, atau data pribadi.

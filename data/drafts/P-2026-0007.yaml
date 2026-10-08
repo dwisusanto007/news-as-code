@@ -1,0 +1,186 @@
+# DRAFT: belum diverifikasi reviewer, belum boleh masuk data/promises/.
+# TODO sebelum dipindah ke data/promises/:
+#   1. Buat snapshot tiap URL (python -m tools.archive URL --save), isi archive_url, archived_at, sha256.
+#   2. Cocokkan kutipan dan angka ke sumber asli; data diambil dari ringkasan halaman.
+#   3. Cari bukti primer: UU APBN 2026 / Nota Keuangan yang memuat pagu MBG Rp335 triliun, dan dokumen revisi
+#      (Perpres/PMK atau paparan Kemenkeu) untuk Rp268, Rp228,38/229, dan Rp218,77 triliun.
+#   4. CAKUPAN ANGKA BERBEDA: sebagian sumber menyebut Rp268 T untuk "MBG", sebagian untuk "BGN". DDTC (21 Sep) menyebut
+#      pagu MBG Rp218,77 T dan total BGN Rp229,75 T, sedangkan sumber lain menyebut Rp229 T sebagai anggaran MBG.
+#      Pisahkan "MBG" dan "total BGN" sebelum menilai.
+#   5. Pimpinan BGN tampaknya berganti: Katadata (18 Jun 2026) menyebut Dadan Hindayana sebagai "pimpinan sebelumnya" dan
+#      mengutip Wakil Kepala BGN Agustina Arumsari. Verifikasi kapan dan mengapa; ini menentukan siapa penanggung jawab
+#      janji P-2026-0003 s.d. 0007 dan perlu ditulis di entri terkait.
+#   6. Janji ini bukan janji belanja: pemangkasan bukan otomatis ingkar. Nilai hanya jika dampak ke target layanan terbukti.
+#   7. Kirim permintaan tanggapan ke BGN dan Kemenkeu (hak jawab), isi `response`. Dua reviewer.
+id: P-2026-0007
+program: mbg
+tags: [anggaran]
+title: Anggaran MBG 2026 sebesar Rp335 triliun dan perubahannya
+commitment: target
+official:
+  name: Dadan Hindayana
+  position: Kepala Badan Gizi Nasional
+  institution: Badan Gizi Nasional (BGN)
+  public_official: true
+promise:
+  statement: >-
+    Kepala BGN menyatakan anggaran MBG 2026 sebesar Rp335 triliun dialokasikan
+    dalam RAPBN 2026, dengan asumsi 82,9 juta penerima manfaat.
+  made_at: "2025-08-19"
+  deadline: "2026-12-31"
+  source_evidence_id: E1
+status: in_progress
+status_note: >-
+  Pagu direvisi turun beberapa kali: Rp268 T (19 Mei 2026, Menkeu, atas
+  instruksi Presiden), Rp228,38 T (18 Jun, Wakil Kepala BGN), Rp229 T (21 Jul,
+  sementara), lalu pagu MBG Rp218,77 T (16 Sep). Realisasi Rp139,77 T per 16 Sep
+  (63,89% dari Rp218,77 T; 41,7% dari Rp335 T). Alasan yang disebut: efisiensi
+  dan verifikasi ulang 62,7 juta penerima. Dampak ke target penerima atau SPPG
+  belum dirinci sumber yang dibaca, jadi belum dinilai.
+evidence:
+  - id: E1
+    title: Program MBG dapat anggaran jumbo Rp335 triliun di 2026, begini komposisinya
+    type: media
+    publisher: Bisnis.com
+    published_at: "2025-08-19"
+    language: id
+    quote: "asumsi kami 82,9 juta" # TODO: cocokkan ke sumber asli
+    url: https://ekonomi.bisnis.com/read/20250819/12/1903768/program-mbg-dapat-anggaran-jumbo-rp335-triliun-di-2026-begini-komposisinya
+    archive_url: https://web.archive.org/web/https://ekonomi.bisnis.com/read/20250819/12/1903768/program-mbg-dapat-anggaran-jumbo-rp335-triliun-di-2026-begini-komposisinya
+    archived_at: "2026-10-08" # TODO: ganti dengan tanggal snapshot sebenarnya
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000" # TODO
+  - id: E2
+    title: Pemerintah pangkas anggaran MBG jadi Rp268 triliun pada 2026
+    type: media
+    publisher: ANTARA News Yogyakarta
+    published_at: "2026-05-19"
+    language: id
+    quote: "Ada penghematan tertentu sesuai dengan instruksi Presiden." # TODO: cocokkan ke sumber asli
+    url: https://jogja.antaranews.com/berita/829605/pemerintah-pangkas-anggaran-mbg-jadi-rp268-triliun-pada-2026
+    archive_url: https://web.archive.org/web/https://jogja.antaranews.com/berita/829605/pemerintah-pangkas-anggaran-mbg-jadi-rp268-triliun-pada-2026
+    archived_at: "2026-10-08" # TODO
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000" # TODO
+  - id: E3
+    title: Anggaran dipangkas jadi Rp268 triliun, Wakil Kepala BGN bilang begini
+    type: media
+    publisher: DDTC News
+    published_at: "2026-05-29"
+    language: id
+    quote: "Efisiensi bukan berarti mengurangi komitmen pemerintah terhadap program MBG" # TODO: cocokkan ke sumber asli
+    url: https://news.ddtc.co.id/berita/nasional/1819728/anggaran-dipangkas-jadi-rp268-triliun-wakil-kepala-bgn-bilang-begini
+    archive_url: https://web.archive.org/web/https://news.ddtc.co.id/berita/nasional/1819728/anggaran-dipangkas-jadi-rp268-triliun-wakil-kepala-bgn-bilang-begini
+    archived_at: "2026-10-08" # TODO
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000" # TODO
+  - id: E4
+    title: BGN rombak anggaran MBG tahun depan karena tak sesuai rencana jangka menengah
+    type: media
+    publisher: Katadata
+    published_at: "2026-06-18"
+    language: id
+    url: https://katadata.co.id/berita/nasional/6a33ef0152cad/bgn-rombak-anggaran-mbg-tahun-depan-karena-tak-sesuai-rencana-jangka-menengah
+    archive_url: https://web.archive.org/web/https://katadata.co.id/berita/nasional/6a33ef0152cad/bgn-rombak-anggaran-mbg-tahun-depan-karena-tak-sesuai-rencana-jangka-menengah
+    archived_at: "2026-10-08" # TODO
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000" # TODO
+  - id: E5
+    title: Anggaran MBG bakal dipangkas jadi Rp229 triliun, ini update dari Purbaya
+    type: media
+    publisher: Infobank News
+    published_at: "2026-07-23"
+    language: id
+    url: https://infobanknews.com/anggaran-mbg-bakal-dipangkas-jadi-rp229-triliun-ini-update-dari-purbaya
+    archive_url: https://web.archive.org/web/https://infobanknews.com/anggaran-mbg-bakal-dipangkas-jadi-rp229-triliun-ini-update-dari-purbaya
+    archived_at: "2026-10-08" # TODO
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000" # TODO
+  - id: E6
+    title: Anggaran MBG sudah terserap Rp139,77 triliun, capai 63,89% dari pagu
+    type: media
+    publisher: DDTC News
+    published_at: "2026-09-21"
+    language: id
+    url: https://news.ddtc.co.id/berita/nasional/1822636/anggaran-mbg-sudah-terserap-rp13977-triliun-capai-6389-dari-pagu
+    archive_url: https://web.archive.org/web/https://news.ddtc.co.id/berita/nasional/1822636/anggaran-mbg-sudah-terserap-rp13977-triliun-capai-6389-dari-pagu
+    archived_at: "2026-10-08" # TODO
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000" # TODO
+  - id: E7
+    title: Anggaran MBG tembus Rp134,2 triliun hingga Agustus, total ada 57 juta penerima
+    type: media
+    publisher: Katadata
+    published_at: "2026-09-18"
+    language: id
+    url: https://katadata.co.id/finansial/makro/6aace26c229eb/anggaran-mbg-tembus-rp-134-2-triliun-hingga-agustus-total-ada-57-juta-penerima
+    archive_url: https://web.archive.org/web/https://katadata.co.id/finansial/makro/6aace26c229eb/anggaran-mbg-tembus-rp-134-2-triliun-hingga-agustus-total-ada-57-juta-penerima
+    archived_at: "2026-10-08" # TODO
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000" # TODO
+timeline:
+  - date: "2025-08-19"
+    kind: statement
+    summary: Kepala BGN menyebut anggaran MBG Rp335 triliun dalam RAPBN 2026 dengan asumsi 82,9 juta penerima.
+    evidence_ids: [E1]
+  - date: "2026-05-19"
+    kind: update
+    summary: Menkeu menyatakan anggaran MBG dipangkas dari Rp335 T menjadi Rp268 T atas instruksi Presiden; realisasi Rp75 T hingga 30 April.
+    evidence_ids: [E2]
+  - date: "2026-05-29"
+    kind: update
+    summary: Wakil Kepala BGN menyatakan efisiensi diarahkan pada belanja operasional dan tidak mengurangi komitmen terhadap MBG.
+    evidence_ids: [E3]
+  - date: "2026-06-18"
+    kind: update
+    summary: Wakil Kepala BGN menyebut anggaran turun dari Rp268 T ke Rp228,38 T dan menilai pagu indikatif 2027 sekitar Rp270 T (81 juta penerima) tidak sesuai RPJMN.
+    evidence_ids: [E4]
+  - date: "2026-07-23"
+    kind: update
+    summary: Angka Rp229 T (sementara) disampaikan Sekretaris Utama BGN pada 21 Juli; Menkeu menyebut pemangkasan itu usulan BGN. Alasan yang disebut BGN adalah verifikasi ulang 62,7 juta penerima.
+    evidence_ids: [E5]
+  - date: "2026-09-16"
+    kind: update
+    summary: Realisasi Rp139,77 T, 63,89% dari pagu MBG Rp218,77 T (total BGN Rp229,75 T).
+    evidence_ids: [E6]
+metrics:
+  - id: M1
+    name: Anggaran MBG 2026
+    unit: Rp triliun
+    definition: >-
+      Pagu anggaran MBG 2026; observasi adalah realisasi belanja kumulatif.
+      Cakupan "MBG" versus "total BGN" berbeda antar sumber (lihat TODO 4).
+    target:
+      value: 335
+      set_on: "2025-08-19"
+      evidence_id: E1
+    target_revisions:
+      - date: "2026-05-19"
+        value: 268
+        evidence_id: E2
+        note: Disebut untuk MBG (ANTARA) dan untuk BGN (DDTC); cakupan belum jelas.
+      - date: "2026-06-18"
+        value: 228.38
+        evidence_id: E4
+        note: Angka Wakil Kepala BGN.
+      - date: "2026-07-21"
+        value: 229
+        evidence_id: E5
+        note: Sementara; disampaikan Sekretaris Utama BGN. Mungkin merujuk total BGN (lihat TODO 4).
+      - date: "2026-09-16"
+        value: 218.77
+        evidence_id: E6
+        note: Pagu MBG menurut DDTC; total pagu BGN Rp229,75 T.
+    observations:
+      - date: "2026-04-30"
+        value: 75
+        evidence_id: E2
+        quality: reported
+        note: Realisasi belanja MBG hingga April 2026.
+      - date: "2026-08-31"
+        value: 134.2
+        evidence_id: E7
+        quality: reported
+        note: Data Kemenkeu hingga Agustus.
+      - date: "2026-09-16"
+        value: 139.77
+        evidence_id: E6
+        quality: reported
+response:
+  status: not_yet_sought
+review:
+  reviewers: []
+  reviewed_at: null

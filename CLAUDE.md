@@ -29,14 +29,23 @@ python -m tools.verify_evidence     # cocokkan sha256 dengan Wayback (butuh jari
 
 ## Status saat ini
 
-- Skema v2, validator, build, CI (validate, verify-evidence, check-reviewers), CODEOWNERS selesai dan lolos test.
-- Kasus pertama: MBG, program `mbg`. Draf `P-2026-0003` (target 82,9 juta akhir 2025, `superseded_by` 0004) dan `P-2026-0004` (target 82,9 juta 2026) di `data/drafts/`.
+**Fase pengumpulan data.** CI otomatis hanya cek skema (`ci.yml`); CI penuh manual (`ci-full.yml`). Alat Python tidak dipakai
+pemilik repo; Claude yang menjalankannya sebagai QA lokal (`python -m tools.validate --drafts`) sebelum push. Pemilik repo memakai
+Java/Spring Boot dan memilih tanpa tooling kode untuk awal; jangan tambah kerumitan yang menghambat pengumpulan data.
+
+- Skema v2, validator, build, alat verifikasi, dan CODEOWNERS selesai dan lolos test (200). CI penuh hanya jalan manual.
+- Kasus pertama: MBG, program `mbg`, semua di `data/drafts/`:
+  - `P-2026-0003` penerima 82,9 juta akhir 2025 (usulan `partially_fulfilled`, 66%) -> `P-2026-0004` penerima 82,9 juta 2026 (`in_progress`)
+  - `P-2026-0005` SPPG 31.000 akhir 2025 (usulan `partially_fulfilled`, 62%) -> `P-2026-0006` SPPG 32.000 akhir April 2026 (usulan `partially_fulfilled`, 87%)
+  - `P-2026-0007` anggaran MBG 2026 Rp335 T dan revisinya (`in_progress`); cakupan "MBG" vs "total BGN" belum dipisahkan
+- Temuan: Katadata (18 Jun 2026) menyebut Dadan Hindayana "pimpinan sebelumnya" BGN; verifikasi pergantian pimpinan (menentukan penanggung jawab tiap janji).
+- Pemicu usulan dari publik: formulir Issue "Usulkan janji". Ubah isi issue jadi draf YAML, jangan menyalin mentah.
 - Sisa untuk draf MBG (lihat komentar TODO di tiap file): snapshot arsip + hash tiap bukti, cocokkan kutipan ke sumber asli, kirim permintaan hak jawab ke BGN, rekonsiliasi definisi "penerima manfaat" dan angka 61,99 vs 57 juta, cari sumber revisi target 74,56 juta, cari bukti primer janji Agustus 2025 (rekaman/transkrip) dan pembanding independen (BPK/BPS), dua reviewer.
 - Setelan GitHub (branch protection, variabel `SITE_BASE_URL`) dilakukan manual oleh pemilik repo.
 
 ## Ide berikutnya
 
-- Janji MBG lain: anggaran 2026 (Rp335 triliun turun ke sekitar Rp219-230 triliun) dan target jumlah SPPG. Perlu riset tambahan.
+- Janji MBG lain: insentif SPPG Rp6 juta/hari, sertifikasi SLHS SPPG, target 3T (480 dapur mulai 2 Okt 2026), pagu indikatif 2027.
 - Grafik tren metrik di halaman janji.
 - Form web yang membuat PR otomatis (opsi hybrid).
 - Deploy otomatis ke GitHub Pages.

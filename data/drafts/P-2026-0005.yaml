@@ -1,0 +1,150 @@
+# DRAFT: belum diverifikasi reviewer, belum boleh masuk data/promises/.
+# TODO sebelum dipindah ke data/promises/:
+#   1. Buat snapshot tiap URL (python -m tools.archive URL --save), isi archive_url, archived_at, sha256.
+#   2. Cocokkan kutipan (`quote`) dan semua angka ke sumber asli; data diambil dari ringkasan halaman.
+#   3. Pastikan definisi "beroperasi" konsisten. Sumber yang sama menyebut juga angka "terdaftar" (29.501) dan
+#      "dalam proses pengajuan" (11.754) pada 9 Sep 2025; keduanya TIDAK dihitung di metrik ini.
+#   4. Laju penambahan 8-20 Jan 2026 (+1.914 dalam 12 hari) jauh lebih cepat dari 9 Des-8 Jan (+2.128 dalam 30 hari).
+#      Cek apakah definisi "beroperasi" atau metode hitung berubah.
+#   5. Kirim permintaan tanggapan ke BGN (hak jawab), isi `response`. Dua reviewer.
+#   6. Reviewer memutuskan status akhir. Usulan `partially_fulfilled` memakai rubrik usulan di docs/GOVERNANCE.md
+#      (>=50% dan <100% pada tenggat); 19.188 dari 31.000 = 61,9%.
+id: P-2026-0005
+program: mbg
+tags: [sppg, infrastruktur]
+title: Target 31.000 SPPG pada akhir 2025
+commitment: target
+official:
+  name: Dadan Hindayana
+  position: Kepala Badan Gizi Nasional
+  institution: Badan Gizi Nasional (BGN)
+  public_official: true
+promise:
+  statement: >-
+    Kepala BGN menyatakan target pembentukan sekitar 31.000 Satuan Pelayanan
+    Pemenuhan Gizi (SPPG) pada akhir tahun 2025, terdiri dari 25.000 unit di
+    daerah aglomerasi dan 6.000 unit di daerah terpencil.
+  made_at: "2025-09-09"
+  deadline: "2025-12-31"
+  source_evidence_id: E1
+status: partially_fulfilled
+status_note: >-
+  Per 8 Jan 2026 BGN mencatat 19.188 SPPG beroperasi (61,9% dari 31.000) dan
+  21.102 per 20 Jan, jadi target tidak tercapai pada tenggat. Target kemudian
+  digeser ke 32.000 pada akhir April 2026 (P-2026-0006). Angka SPPG
+  "beroperasi", "terdaftar", dan "diajukan" berbeda dan tidak boleh dicampur.
+evidence:
+  - id: E1
+    title: BGN baru ada 7.477 SPPG yang sudah operasional hingga awal September
+    type: media
+    publisher: DDTC News
+    published_at: "2025-09-09"
+    language: id
+    quote: "target pembentukan SPPG sebanyak 31.000 unit di akhir tahun" # TODO: cocokkan ke sumber asli
+    url: https://news.ddtc.co.id/berita/nasional/1813528/bgn-baru-ada-7477-sppg-yang-sudah-operasional-hingga-awal-september
+    archive_url: https://web.archive.org/web/https://news.ddtc.co.id/berita/nasional/1813528/bgn-baru-ada-7477-sppg-yang-sudah-operasional-hingga-awal-september
+    archived_at: "2026-10-08" # TODO: ganti dengan tanggal snapshot sebenarnya
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000" # TODO
+  - id: E2
+    title: Presiden Prabowo pimpin Ratas di Istana, optimistis target 82,9 juta penerima manfaat MBG tercapai
+    type: primary_document
+    publisher: Sekretariat Kabinet RI
+    published_at: "2025-10-29"
+    language: id
+    url: https://setkab.go.id/3yw7
+    archive_url: https://web.archive.org/web/https://setkab.go.id/3yw7
+    archived_at: "2026-10-08" # TODO
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000" # TODO
+  - id: E3
+    title: Tak capai target, jumlah penerima manfaat MBG diprediksi hanya 72%
+    type: media
+    publisher: DDTC News
+    published_at: "2025-12-09"
+    language: id
+    url: https://news.ddtc.co.id/berita/nasional/1815779/tak-capai-target-jumlah-penerima-manfaat-mbg-diprediksi-hanya-72
+    archive_url: https://web.archive.org/web/https://news.ddtc.co.id/berita/nasional/1815779/tak-capai-target-jumlah-penerima-manfaat-mbg-diprediksi-hanya-72
+    archived_at: "2026-10-08" # TODO
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000" # TODO
+  - id: E4
+    title: BGN targetkan 82,9 juta penerima manfaat MBG di 2026
+    type: media
+    publisher: Okezone
+    published_at: "2026-01-08"
+    language: id
+    url: https://economy.okezone.com/read/2026/01/08/320/3194299/bgn-targetkan-82-9-juta-penerima-manfaat-mbg-di-2026
+    archive_url: https://web.archive.org/web/https://economy.okezone.com/read/2026/01/08/320/3194299/bgn-targetkan-82-9-juta-penerima-manfaat-mbg-di-2026
+    archived_at: "2026-10-08" # TODO
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000" # TODO
+  - id: E5
+    title: Awal 2026, program MBG jangkau hampir 60 juta penerima manfaat
+    type: primary_document
+    publisher: Badan Gizi Nasional
+    published_at: "2026-01-20"
+    language: id
+    url: https://www.bgn.go.id/news/siaran-pers/awal-2026-program-mbg-jangkau-hampir-60-juta-penerima-manfaat
+    archive_url: https://web.archive.org/web/https://www.bgn.go.id/news/siaran-pers/awal-2026-program-mbg-jangkau-hampir-60-juta-penerima-manfaat
+    archived_at: "2026-10-08" # TODO
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000" # TODO
+timeline:
+  - date: "2025-09-09"
+    kind: statement
+    summary: Kepala BGN menyebut 7.477 SPPG beroperasi dan menargetkan sekitar 31.000 unit pada akhir 2025 (25.000 aglomerasi, 6.000 terpencil).
+    evidence_ids: [E1]
+  - date: "2025-10-29"
+    kind: update
+    summary: Dalam rapat terbatas tercatat 13.514 SPPG di 38 provinsi.
+    evidence_ids: [E2]
+  - date: "2025-12-09"
+    kind: update
+    summary: Tercatat 17.060 SPPG.
+    evidence_ids: [E3]
+  - date: "2026-01-08"
+    kind: setback
+    summary: Tenggat lewat. BGN mencatat 19.188 SPPG beroperasi di 38 provinsi.
+    evidence_ids: [E4]
+  - date: "2026-01-20"
+    kind: update
+    summary: BGN melaporkan 21.102 SPPG kepada Komisi IX DPR.
+    evidence_ids: [E5]
+related:
+  - id: P-2026-0006
+    relation: superseded_by
+metrics:
+  - id: M1
+    name: SPPG yang beroperasi
+    unit: SPPG
+    definition: >-
+      Jumlah SPPG berstatus beroperasi menurut BGN. Angka "terdaftar" atau
+      "dalam proses pengajuan" tidak dihitung.
+    target:
+      value: 31000
+      set_on: "2025-09-09"
+      evidence_id: E1
+    observations:
+      - date: "2025-09-09"
+        value: 7477
+        evidence_id: E1
+        quality: reported
+        note: Sumber menyebut juga 7.453 pada kutipan yang sama, lalu 7.477 setelah pembaruan hari itu.
+      - date: "2025-10-29"
+        value: 13514
+        evidence_id: E2
+        quality: reported
+      - date: "2025-12-09"
+        value: 17060
+        evidence_id: E3
+        quality: reported
+      - date: "2026-01-08"
+        value: 19188
+        evidence_id: E4
+        quality: reported
+      - date: "2026-01-20"
+        value: 21102
+        evidence_id: E5
+        quality: reported
+        note: Lihat TODO 4 soal laju penambahan.
+response:
+  status: not_yet_sought
+review:
+  reviewers: []
+  reviewed_at: null

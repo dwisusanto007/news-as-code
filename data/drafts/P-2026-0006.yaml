@@ -1,0 +1,131 @@
+# DRAFT: belum diverifikasi reviewer, belum boleh masuk data/promises/.
+# TODO sebelum dipindah ke data/promises/:
+#   1. Buat snapshot tiap URL (python -m tools.archive URL --save), isi archive_url, archived_at, sha256.
+#   2. Cocokkan kutipan dan angka ke sumber asli; data diambil dari ringkasan halaman.
+#   3. Cari bukti primer pernyataan 14 Jan 2026 ("MBG Outlook"): rekaman atau siaran pers BGN.
+#   4. Jabatan Tigor Pangaribuan ("Deputi Sistem dan Tata Kelola") dari ringkasan berita berbahasa Inggris; cek sumber asli.
+#   5. 27.952 (30 Apr, "beroperasi") dan 28.390 (12 Mei, "terdaftar") berbeda definisi; angka kedua ditandai disputed.
+#   6. Kirim permintaan tanggapan ke BGN (hak jawab), isi `response`. Dua reviewer.
+#   7. Reviewer memutuskan status akhir. Usulan `partially_fulfilled` memakai rubrik usulan di docs/GOVERNANCE.md;
+#      27.952 dari 32.000 = 87,4% pada tenggat.
+id: P-2026-0006
+program: mbg
+tags: [sppg, infrastruktur]
+title: Target 32.000 SPPG pada akhir April 2026
+commitment: target
+official:
+  name: Tigor Pangaribuan
+  position: Deputi Bidang Sistem dan Tata Kelola
+  institution: Badan Gizi Nasional (BGN)
+  public_official: true
+promise:
+  statement: >-
+    Pejabat BGN menyatakan jumlah SPPG akan mencapai 32.000 unit pada akhir
+    April 2026. Saat itu sekitar 19.000 SPPG beroperasi.
+  made_at: "2026-01-14"
+  deadline: "2026-04-30"
+  source_evidence_id: E1
+status: partially_fulfilled
+status_note: >-
+  Per 30 Apr 2026 tercatat 27.952 SPPG (87,4% dari 32.000), jadi target tidak
+  tercapai pada tenggat. Data 12 Mei 2026 menyebut 28.390 SPPG "terdaftar",
+  dengan 15.795 (55,42%) bersertifikat SLHS; definisinya berbeda dari
+  "beroperasi". Menggantikan target 31.000 akhir 2025 (P-2026-0005).
+evidence:
+  - id: E1
+    title: BGN targetkan 32.000 SPPG dan 82,9 juta penerima manfaat MBG pada April 2026
+    type: media
+    publisher: InvestorTrust
+    published_at: "2026-01-15"
+    language: id
+    quote: "Akan mencapai jumlah 32.000 itu targetnya di akhir bulan April." # TODO: cocokkan ke sumber asli
+    url: https://investortrust.id/national/91372/bgn-targetkan-32000-sppg-dan-82-9-juta-penerima-manfaat-mbg-pada-april-2026
+    archive_url: https://web.archive.org/web/https://investortrust.id/national/91372/bgn-targetkan-32000-sppg-dan-82-9-juta-penerima-manfaat-mbg-pada-april-2026
+    archived_at: "2026-10-08" # TODO: ganti dengan tanggal snapshot sebenarnya
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000" # TODO
+  - id: E2
+    title: Awal 2026, program MBG jangkau hampir 60 juta penerima manfaat
+    type: primary_document
+    publisher: Badan Gizi Nasional
+    published_at: "2026-01-20"
+    language: id
+    url: https://www.bgn.go.id/news/siaran-pers/awal-2026-program-mbg-jangkau-hampir-60-juta-penerima-manfaat
+    archive_url: https://web.archive.org/web/https://www.bgn.go.id/news/siaran-pers/awal-2026-program-mbg-jangkau-hampir-60-juta-penerima-manfaat
+    archived_at: "2026-10-08" # TODO
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000" # TODO
+  - id: E3
+    title: Pemerintah pangkas anggaran MBG jadi Rp268 triliun pada 2026
+    type: media
+    publisher: ANTARA News Yogyakarta
+    published_at: "2026-05-19"
+    language: id
+    url: https://jogja.antaranews.com/berita/829605/pemerintah-pangkas-anggaran-mbg-jadi-rp268-triliun-pada-2026
+    archive_url: https://web.archive.org/web/https://jogja.antaranews.com/berita/829605/pemerintah-pangkas-anggaran-mbg-jadi-rp268-triliun-pada-2026
+    archived_at: "2026-10-08" # TODO
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000" # TODO
+  - id: E4
+    title: Penerima manfaat MBG capai 61,9 juta orang
+    type: media
+    publisher: Bisnis.com
+    published_at: "2026-05-13"
+    language: id
+    url: https://kabar24.bisnis.com/read/20260513/15/1973553/penerima-manfaat-mbg-capai-619-juta-orang
+    archive_url: https://web.archive.org/web/https://kabar24.bisnis.com/read/20260513/15/1973553/penerima-manfaat-mbg-capai-619-juta-orang
+    archived_at: "2026-10-08" # TODO
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000" # TODO
+timeline:
+  - date: "2026-01-14"
+    kind: statement
+    summary: Pada diskusi "MBG Outlook" disebut target 32.000 SPPG pada akhir April 2026; saat itu sekitar 19.000 beroperasi.
+    evidence_ids: [E1]
+  - date: "2026-01-20"
+    kind: update
+    summary: BGN melaporkan 21.102 SPPG kepada Komisi IX DPR.
+    evidence_ids: [E2]
+  - date: "2026-04-30"
+    kind: setback
+    summary: Tenggat tiba dengan 27.952 SPPG (menurut Menkeu), jadi 4.048 unit di bawah target. Saat itu 61,96 juta penerima.
+    evidence_ids: [E3]
+  - date: "2026-05-12"
+    kind: update
+    summary: Bakom melaporkan 28.390 SPPG terdaftar, 15.795 di antaranya bersertifikat SLHS (55,42%).
+    evidence_ids: [E4]
+related:
+  - id: P-2026-0005
+    relation: supersedes
+metrics:
+  - id: M1
+    name: SPPG yang beroperasi
+    unit: SPPG
+    definition: >-
+      Jumlah SPPG berstatus beroperasi menurut BGN/Kemenkeu. Angka "terdaftar"
+      dicatat terpisah dan ditandai disputed.
+    target:
+      value: 32000
+      set_on: "2026-01-14"
+      evidence_id: E1
+    observations:
+      - date: "2026-01-14"
+        value: 19000
+        evidence_id: E1
+        quality: provisional
+        note: Disebut "sekitar 19.000".
+      - date: "2026-01-20"
+        value: 21102
+        evidence_id: E2
+        quality: reported
+      - date: "2026-04-30"
+        value: 27952
+        evidence_id: E3
+        quality: reported
+        note: Disampaikan Menkeu pada konferensi pers APBN KiTa, bersama realisasi Rp75 triliun dan 61,96 juta penerima.
+      - date: "2026-05-12"
+        value: 28390
+        evidence_id: E4
+        quality: disputed
+        definition_note: Disebut "terdaftar", bukan "beroperasi"; bisa lebih besar dari jumlah yang beroperasi.
+response:
+  status: not_yet_sought
+review:
+  reviewers: []
+  reviewed_at: null
