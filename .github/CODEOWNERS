@@ -1,0 +1,7 @@
+# Pemilik kode/data. Ganti dengan tim reviewer (mis. @org/reviewer-data) kalau repo
+# dipindah ke organisasi. Lihat docs/GOVERNANCE.md untuk setelan branch protection.
+/data/       @dwisusanto007
+/schema/     @dwisusanto007
+/tools/      @dwisusanto007
+/tests/      @dwisusanto007
+/.github/    @dwisusanto007

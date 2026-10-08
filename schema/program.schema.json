@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/news-as-code/program.schema.json",
+  "title": "Program",
+  "description": "Program/topik yang mengelompokkan beberapa janji (mis. satu program pemerintah).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["slug", "name", "description", "institution"],
+  "properties": {
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "fictional": { "type": "boolean" },
+    "name": { "type": "string", "minLength": 3, "maxLength": 120 },
+    "description": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 500,
+      "description": "Deskripsi netral. Tanpa penilaian."
+    },
+    "institution": { "type": "string", "minLength": 2, "maxLength": 160 },
+    "institution_wikidata_id": { "type": "string", "pattern": "^Q[0-9]+$" },
+    "tags": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" }
+    }
+  }
+}

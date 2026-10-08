@@ -2,7 +2,10 @@
 # untuk mendemonstrasikan format. Jangan dikutip sebagai fakta.
 id: P-2026-0001
 fictional: true
+program: jalan-kabupaten
+tags: [infrastruktur]
 title: Perbaikan 50 km jalan kabupaten sebelum akhir 2026
+commitment: firm_promise
 official:
   name: Bupati Contoh Fiktif
   position: Bupati
@@ -68,6 +71,22 @@ timeline:
     kind: update
     summary: Audit mencatat 21 km selesai dari target 50 km.
     evidence_ids: [E3, E4]
+metrics:
+  - id: M1
+    name: Panjang jalan kabupaten yang selesai diperbaiki
+    unit: km
+    definition: Total panjang ruas jalan kabupaten yang dinyatakan selesai oleh audit.
+    target:
+      value: 50
+      set_on: "2026-01-15"
+      evidence_id: E1
+    observations:
+      - date: "2026-08-20"
+        value: 21
+        evidence_id: E3
+        quality: reported
+response:
+  status: not_yet_sought
 review:
   reviewers: [reviewer-contoh-1, reviewer-contoh-2]
   reviewed_at: "2026-08-30"

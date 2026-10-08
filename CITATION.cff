@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Jika Anda memakai perangkat lunak atau data ini, mohon sitasi dengan metadata berikut."
+title: "Promise Tracker (news as code)"
+type: software
+version: "0.2.0"
+date-released: "2026-10-08"
+authors:
+  - name: "Promise Tracker contributors"
+repository-code: "https://github.com/dwisusanto007/news-as-code"
+license: MIT
+abstract: >-
+  Eksperimen open source untuk melacak janji pejabat publik dengan bukti
+  terarsip, metrik terstruktur, dan review publik. Kode berlisensi MIT; data
+  berlisensi CC BY-SA 4.0 (lihat LICENSE-DATA.md).
+keywords:
+  - fact-checking
+  - akuntabilitas
+  - open data

@@ -2,7 +2,10 @@
 # untuk mendemonstrasikan format. Jangan dikutip sebagai fakta.
 id: P-2026-0002
 fictional: true
+program: puskesmas-24-jam
+tags: [kesehatan]
 title: Layanan puskesmas buka 24 jam di semua kecamatan
+commitment: target
 official:
   name: Walikota Contoh Rekaan
   position: Walikota
@@ -55,6 +58,26 @@ timeline:
     kind: update
     summary: Dinas Kesehatan mencatat 3 dari 12 puskesmas beroperasi 24 jam.
     evidence_ids: [E2, E3]
+metrics:
+  - id: M1
+    name: Puskesmas kecamatan yang melayani 24 jam
+    unit: puskesmas
+    definition: Jumlah puskesmas kecamatan yang beroperasi 24 jam per hari menurut Dinas Kesehatan.
+    target:
+      value: 12
+      set_on: "2026-02-10"
+      evidence_id: E1
+    observations:
+      - date: "2026-07-02"
+        value: 3
+        evidence_id: E2
+        quality: reported
+response:
+  status: no_reply
+  requested_at: "2026-07-05"
+corrections:
+  - date: "2026-07-20"
+    summary: Koreksi contoh. Jumlah puskesmas 24 jam semula tertulis 4, diperbaiki menjadi 3 sesuai data Dinas Kesehatan (E2).
 review:
   reviewers: [reviewer-contoh-1, reviewer-contoh-2]
   reviewed_at: "2026-07-15"

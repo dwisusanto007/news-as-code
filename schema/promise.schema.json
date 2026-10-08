@@ -2,10 +2,10 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://example.org/news-as-code/promise.schema.json",
   "title": "Promise",
-  "description": "Satu janji publik seorang pejabat, lengkap dengan bukti dan timeline tindak lanjut.",
+  "description": "Satu janji/target publik seorang pejabat, lengkap dengan bukti, metrik, dan timeline tindak lanjut.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["id", "title", "official", "promise", "status", "evidence", "timeline", "review"],
+  "required": ["id", "program", "title", "commitment", "official", "promise", "status", "evidence", "timeline", "review"],
   "properties": {
     "id": {
       "type": "string",
@@ -16,7 +16,22 @@
       "type": "boolean",
       "description": "true untuk data contoh/fiktif. Ditandai jelas di situs hasil build."
     },
+    "program": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Slug program/topik; harus ada file data/programs/<slug>.yaml."
+    },
+    "tags": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" }
+    },
     "title": { "type": "string", "minLength": 5, "maxLength": 160 },
+    "commitment": {
+      "type": "string",
+      "enum": ["firm_promise", "target", "aspiration", "projection"],
+      "description": "Kekuatan komitmen. firm_promise: janji tegas. target: angka/tenggat yang ditetapkan. aspiration: harapan ('mudah-mudahan'). projection: perkiraan. Status 'broken' hanya untuk firm_promise dan target."
+    },
     "official": {
       "type": "object",
       "additionalProperties": false,
@@ -25,6 +40,8 @@
         "name": { "type": "string", "minLength": 2, "maxLength": 120 },
         "position": { "type": "string", "minLength": 2, "maxLength": 120 },
         "institution": { "type": "string", "minLength": 2, "maxLength": 160 },
+        "wikidata_id": { "type": "string", "pattern": "^Q[0-9]+$" },
+        "institution_wikidata_id": { "type": "string", "pattern": "^Q[0-9]+$" },
         "public_official": {
           "const": true,
           "description": "Hanya pejabat/figur publik dalam kapasitas jabatannya. Tidak ada data pribadi (alamat, keluarga, dll)."
@@ -42,7 +59,12 @@
           "maxLength": 600,
           "description": "Isi janji, dirumuskan netral dan bisa diuji (ada ukuran yang jelas)."
         },
-        "made_at": { "type": "string", "format": "date", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "on_behalf_of": {
+          "type": "string",
+          "maxLength": 160,
+          "description": "Jika disampaikan atas nama/permintaan pihak lain (mis. Presiden), sebutkan di sini."
+        },
+        "made_at": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
         "deadline": { "type": ["string", "null"], "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
         "source_evidence_id": {
           "type": "string",
@@ -55,7 +77,27 @@
       "type": "string",
       "enum": ["not_started", "in_progress", "fulfilled", "partially_fulfilled", "broken", "unverifiable"]
     },
-    "status_note": { "type": "string", "maxLength": 600 },
+    "status_note": { "type": "string", "maxLength": 800 },
+    "related": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "relation"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^P-[0-9]{4}-[0-9]{4}$" },
+          "relation": {
+            "type": "string",
+            "enum": ["supersedes", "superseded_by", "follows", "part_of"],
+            "description": "supersedes/superseded_by harus berpasangan di kedua entri."
+          }
+        }
+      }
+    },
+    "metrics": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/metric" }
+    },
     "evidence": {
       "type": "array",
       "minItems": 1,
@@ -64,6 +106,19 @@
     "timeline": {
       "type": "array",
       "items": { "$ref": "#/$defs/event" }
+    },
+    "response": { "$ref": "#/$defs/response" },
+    "corrections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["date", "summary"],
+        "properties": {
+          "date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+          "summary": { "type": "string", "minLength": 5, "maxLength": 400 }
+        }
+      }
     },
     "review": {
       "type": "object",
@@ -74,7 +129,7 @@
           "type": "array",
           "uniqueItems": true,
           "items": { "type": "string", "pattern": "^[A-Za-z0-9-]{1,39}$" },
-          "description": "GitHub handle reviewer."
+          "description": "GitHub handle reviewer. Dicocokkan dengan approval PR oleh tools/check_reviewers.py."
         },
         "reviewed_at": { "type": ["string", "null"], "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" }
       }
@@ -99,14 +154,25 @@
           "maxLength": 120,
           "description": "Penerbit/organisasi asal. Dipakai untuk cek independensi bukti."
         },
+        "language": { "type": "string", "pattern": "^[a-z]{2}$" },
         "published_at": { "type": ["string", "null"], "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "locator": {
+          "type": "string",
+          "maxLength": 120,
+          "description": "Letak bukti di sumber: halaman, menit:detik, atau bagian."
+        },
+        "quote": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "Kutipan pendek (<= 400 karakter) yang mendukung klaim."
+        },
         "url": { "type": "string", "pattern": "^https?://[^\\s]+$" },
         "archive_url": { "type": "string", "pattern": "^https://[^\\s]+$" },
         "archived_at": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
         "sha256": {
           "type": "string",
           "pattern": "^[a-f0-9]{64}$",
-          "description": "Hash dari snapshot yang diarsipkan."
+          "description": "SHA-256 dari byte mentah snapshot (Wayback: URL bentuk id_). Lihat docs/GOVERNANCE.md."
         }
       }
     },
@@ -124,6 +190,93 @@
           "items": { "type": "string", "pattern": "^E[0-9]+$" }
         }
       }
+    },
+    "metric": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "unit", "definition", "target", "observations"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^M[0-9]+$" },
+        "name": { "type": "string", "minLength": 3, "maxLength": 120 },
+        "unit": { "type": "string", "minLength": 1, "maxLength": 40 },
+        "definition": {
+          "type": "string",
+          "minLength": 5,
+          "maxLength": 400,
+          "description": "Apa yang dihitung. Definisi yang bergeser antar sumber dicatat di observations[].definition_note."
+        },
+        "target": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["value", "set_on", "evidence_id"],
+          "properties": {
+            "value": { "type": "number", "exclusiveMinimum": 0 },
+            "set_on": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+            "evidence_id": { "type": "string", "pattern": "^E[0-9]+$" }
+          }
+        },
+        "target_revisions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["date", "value", "evidence_id"],
+            "properties": {
+              "date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+              "value": { "type": "number", "exclusiveMinimum": 0 },
+              "evidence_id": { "type": "string", "pattern": "^E[0-9]+$" },
+              "note": { "type": "string", "maxLength": 300 }
+            }
+          }
+        },
+        "observations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["date", "value", "evidence_id", "quality"],
+            "properties": {
+              "date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+              "value": { "type": "number", "minimum": 0 },
+              "evidence_id": { "type": "string", "pattern": "^E[0-9]+$" },
+              "quality": {
+                "type": "string",
+                "enum": ["reported", "provisional", "disputed"],
+                "description": "reported: angka resmi. provisional: sementara. disputed: bertentangan dengan sumber lain/definisi tak konsisten."
+              },
+              "definition_note": { "type": "string", "maxLength": 300 },
+              "note": { "type": "string", "maxLength": 300 }
+            }
+          }
+        }
+      }
+    },
+    "response": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["not_yet_sought", "requested", "received", "declined", "no_reply"],
+          "description": "Hak jawab pihak yang dinilai."
+        },
+        "requested_at": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "received_at": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "summary": { "type": "string", "maxLength": 600 },
+        "evidence_id": { "type": "string", "pattern": "^E[0-9]+$" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "enum": ["requested", "declined", "no_reply"] } }, "required": ["status"] },
+          "then": { "required": ["requested_at"] }
+        },
+        {
+          "if": { "properties": { "status": { "const": "received" } }, "required": ["status"] },
+          "then": { "required": ["received_at", "summary", "evidence_id"] }
+        }
+      ]
     }
   }
 }

@@ -2,9 +2,16 @@
 # TODO sebelum dipindah ke data/promises/:
 #   1. Buat snapshot tiap URL (Wayback/archive.ph/perma.cc), lalu isi archive_url, archived_at, sha256.
 #   2. Dua reviewer memeriksa tiap bukti dan mengisi review.reviewers + reviewed_at.
-#   3. Reviewer memutuskan status akhir (usulan saat ini: broken).
+#   3. Reviewer memutuskan status akhir (usulan saat ini: broken) dan apakah commitment
+#      'target' tepat (Kepala BGN memakai kata "mudah-mudahan"; bila 'aspiration', status broken ditolak validator).
+#   4. Kirim permintaan tanggapan ke BGN (hak jawab), lalu isi `response`.
+#   5. Rekonsiliasi definisi "penerima manfaat" antar observasi di `metrics` (lihat definition_note).
+#   6. Cocokkan kutipan (`quote`) ke sumber asli; kutipan diambil dari ringkasan halaman, belum dibaca penuh.
 id: P-2026-0003
+program: mbg
+tags: [gizi, penerima-manfaat]
 title: Target 82,9 juta penerima MBG pada akhir 2025
+commitment: target
 official:
   name: Dadan Hindayana
   position: Kepala Badan Gizi Nasional
@@ -15,6 +22,7 @@ promise:
     Kepala BGN menyampaikan bahwa atas permintaan Presiden, program Makan
     Bergizi Gratis dipercepat hingga melayani 82,9 juta penerima manfaat
     pada akhir tahun 2025.
+  on_behalf_of: Presiden Prabowo Subianto (permintaan percepatan)
   made_at: "2025-08-19"
   deadline: "2025-12-31"
   source_evidence_id: E1
@@ -40,6 +48,8 @@ evidence:
     type: media
     publisher: Bisnis.com
     published_at: "2025-10-21"
+    language: id
+    quote: "Diperkirakan tahun 2026 Maret, itu kita sudah bisa mencapai 82,9 juta" # TODO: cocokkan ke sumber asli
     url: https://ekonomi.bisnis.com/read/20251021/12/1922252/target-829-juta-penerima-mbg-baru-tercapai-maret-2026-butuh-dana-rp351-triliun
     archive_url: https://web.archive.org/web/https://ekonomi.bisnis.com/read/20251021/12/1922252/target-829-juta-penerima-mbg-baru-tercapai-maret-2026-butuh-dana-rp351-triliun
     archived_at: "2026-10-08" # TODO
@@ -49,6 +59,8 @@ evidence:
     type: primary_document
     publisher: Sekretariat Kabinet RI
     published_at: "2025-10-29"
+    language: id
+    quote: "Kita kejar terus target sampai akhir tahun mudah-mudahan 82,9 juta (penerima manfaat) bisa kita layani di akhir tahun." # TODO: cocokkan ke sumber asli
     url: https://setkab.go.id/3yw7
     archive_url: https://web.archive.org/web/https://setkab.go.id/3yw7
     archived_at: "2026-10-08" # TODO
@@ -105,6 +117,55 @@ timeline:
     kind: update
     summary: BGN melaporkan 59,86 juta penerima di 21.102 SPPG kepada Komisi IX DPR.
     evidence_ids: [E6]
+related:
+  - id: P-2026-0004
+    relation: superseded_by
+metrics:
+  - id: M1
+    name: Penerima manfaat MBG
+    unit: juta orang
+    definition: >-
+      Jumlah penerima manfaat MBG yang dilaporkan BGN. Definisi bergeser antar
+      sumber; lihat definition_note pada tiap observasi.
+    target:
+      value: 82.9
+      set_on: "2025-08-19"
+      evidence_id: E1
+    observations:
+      - date: "2025-08-19"
+        value: 20.5
+        evidence_id: E1
+        quality: reported
+        note: Dilayani melalui 5.905 SPPG.
+      - date: "2025-10-29"
+        value: 39.5
+        evidence_id: E3
+        quality: provisional
+        definition_note: Disebut "potensi layanan", bukan jumlah penerima aktual.
+        note: 13.514 SPPG. Kepala BGN memperkirakan 40 juta tercapai di akhir Oktober.
+      - date: "2025-12-09"
+        value: 49
+        evidence_id: E4
+        quality: reported
+        note: 17.060 SPPG. Target pekan itu 51,5 juta.
+      - date: "2026-01-08"
+        value: 55.1
+        evidence_id: E5
+        quality: disputed
+        definition_note: >-
+          Disebut dihitung "sejak program dimulai awal 2025"; belum jelas apakah
+          kumulatif atau penerima aktif.
+        note: 19.188 SPPG.
+      - date: "2026-01-20"
+        value: 59.86
+        evidence_id: E6
+        quality: reported
+        definition_note: >-
+          Termasuk tenaga pendidik menurut siaran pers. Perlu dicek apakah tenaga
+          pendidik termasuk dalam sasaran 82,9 juta.
+        note: 21.102 SPPG.
+response:
+  status: not_yet_sought
 review:
   reviewers: []
   reviewed_at: null

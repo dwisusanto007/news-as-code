@@ -3,8 +3,14 @@
 #   1. Buat snapshot tiap URL (Wayback/archive.ph/perma.cc), lalu isi archive_url, archived_at, sha256.
 #   2. Dua reviewer memeriksa tiap bukti dan mengisi review.reviewers + reviewed_at.
 #   3. Reviewer memutuskan arti "pertengahan tahun" dan apakah tonggak itu dinilai terpisah.
+#   4. Kirim permintaan tanggapan ke BGN (hak jawab), lalu isi `response`.
+#   5. Cari sumber asal revisi target 74,56 juta (saat ini hanya dari ringkasan satu berita).
+#   6. Rekonsiliasi angka 61,99 juta (Mei) vs sekitar 57 juta (Agustus) vs 52,4 juta (Januari, Katadata).
 id: P-2026-0004
+program: mbg
+tags: [gizi, penerima-manfaat]
 title: Target 82,9 juta penerima MBG pada 2026
+commitment: target
 official:
   name: Dadan Hindayana
   position: Kepala Badan Gizi Nasional
@@ -92,6 +98,59 @@ timeline:
     kind: setback
     summary: Tercatat 56,99 juta penerima (sementara), 76,45% dari target 74,56 juta. Realisasi anggaran Rp139,77 triliun dari pagu Rp218,77 triliun.
     evidence_ids: [E5]
+related:
+  - id: P-2026-0003
+    relation: supersedes
+metrics:
+  - id: M1
+    name: Penerima manfaat MBG
+    unit: juta orang
+    definition: >-
+      Jumlah penerima manfaat MBG yang dilaporkan BGN/Bakom/Kemenkeu. Definisi
+      dan sumber berbeda antar observasi; lihat note.
+    target:
+      value: 82.9
+      set_on: "2026-01-20"
+      evidence_id: E1
+    target_revisions:
+      - date: "2026-09-16"
+        value: 74.56
+        evidence_id: E5
+        note: >-
+          DDTC menyebut 76,45% dari target 74,56 juta. Sumber penetapan target
+          baru ini belum ditemukan; perlu dilacak.
+    observations:
+      - date: "2026-01-20"
+        value: 59.86
+        evidence_id: E1
+        quality: reported
+        definition_note: Termasuk tenaga pendidik menurut siaran pers BGN.
+        note: 21.102 SPPG.
+      - date: "2026-04-22"
+        value: 62
+        evidence_id: E2
+        quality: reported
+        note: Disebut lisan oleh Kepala BGN ("62 juta orang").
+      - date: "2026-05-12"
+        value: 61.99
+        evidence_id: E3
+        quality: disputed
+        note: >-
+          Data Bakom/BGN (74,8% dari target). Berbeda dari data Kemenkeu akhir
+          Agustus (sekitar 57 juta) dan 52,4 juta untuk Januari (Katadata);
+          penyebab selisih belum dijelaskan sumber.
+      - date: "2026-08-31"
+        value: 57
+        evidence_id: E4
+        quality: disputed
+        note: Data Kemenkeu (46,2 juta siswa dan 10,8 juta non-siswa). Lihat catatan 12 Mei.
+      - date: "2026-09-16"
+        value: 56.99
+        evidence_id: E5
+        quality: provisional
+        note: Disebut bersifat sementara.
+response:
+  status: not_yet_sought
 review:
   reviewers: []
   reviewed_at: null
