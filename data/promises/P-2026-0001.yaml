@@ -1,0 +1,73 @@
+# DATA CONTOH (FIKTIF). Semua nama, organisasi, dan URL di file ini rekaan
+# untuk mendemonstrasikan format. Jangan dikutip sebagai fakta.
+id: P-2026-0001
+fictional: true
+title: Perbaikan 50 km jalan kabupaten sebelum akhir 2026
+official:
+  name: Bupati Contoh Fiktif
+  position: Bupati
+  institution: Kabupaten Fiktif
+  public_official: true
+promise:
+  statement: >-
+    Pemerintah Kabupaten Fiktif akan memperbaiki 50 km ruas jalan kabupaten
+    yang rusak sebelum akhir tahun 2026.
+  made_at: "2026-01-15"
+  deadline: "2026-12-31"
+  source_evidence_id: E1
+status: in_progress
+status_note: >-
+  Per laporan audit Agustus 2026, 21 km selesai dari target 50 km.
+evidence:
+  - id: E1
+    title: Pidato pelantikan (transkrip resmi)
+    type: primary_document
+    publisher: Humas Kabupaten Fiktif
+    published_at: "2026-01-15"
+    url: https://example.org/humas/pidato-pelantikan
+    archive_url: https://web.archive.org/web/20260116000000/https://example.org/humas/pidato-pelantikan
+    archived_at: "2026-01-16"
+    sha256: "0000000000000000000000000000000000000000000000000000000000000001"
+  - id: E2
+    title: Dokumen anggaran jalan 2026
+    type: primary_document
+    publisher: Dinas PU Kabupaten Fiktif
+    published_at: "2026-03-02"
+    url: https://example.org/dinas-pu/anggaran-2026.pdf
+    archive_url: https://web.archive.org/web/20260303000000/https://example.org/dinas-pu/anggaran-2026.pdf
+    archived_at: "2026-03-03"
+    sha256: "0000000000000000000000000000000000000000000000000000000000000002"
+  - id: E3
+    title: Laporan audit progres pekerjaan jalan
+    type: primary_document
+    publisher: Inspektorat Fiktif
+    published_at: "2026-08-20"
+    url: https://example.org/inspektorat/audit-jalan-2026
+    archive_url: https://web.archive.org/web/20260821000000/https://example.org/inspektorat/audit-jalan-2026
+    archived_at: "2026-08-21"
+    sha256: "0000000000000000000000000000000000000000000000000000000000000003"
+  - id: E4
+    title: Liputan progres perbaikan jalan
+    type: media
+    publisher: Harian Contoh
+    published_at: "2026-08-25"
+    url: https://example.com/harian-contoh/progres-jalan
+    archive_url: https://web.archive.org/web/20260826000000/https://example.com/harian-contoh/progres-jalan
+    archived_at: "2026-08-26"
+    sha256: "0000000000000000000000000000000000000000000000000000000000000004"
+timeline:
+  - date: "2026-01-15"
+    kind: statement
+    summary: Janji diucapkan dalam pidato pelantikan.
+    evidence_ids: [E1]
+  - date: "2026-03-02"
+    kind: action
+    summary: Anggaran perbaikan jalan dialokasikan dalam APBD.
+    evidence_ids: [E2]
+  - date: "2026-08-20"
+    kind: update
+    summary: Audit mencatat 21 km selesai dari target 50 km.
+    evidence_ids: [E3, E4]
+review:
+  reviewers: [reviewer-contoh-1, reviewer-contoh-2]
+  reviewed_at: "2026-08-30"

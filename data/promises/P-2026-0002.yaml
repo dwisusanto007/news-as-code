@@ -1,0 +1,60 @@
+# DATA CONTOH (FIKTIF). Semua nama, organisasi, dan URL di file ini rekaan
+# untuk mendemonstrasikan format. Jangan dikutip sebagai fakta.
+id: P-2026-0002
+fictional: true
+title: Layanan puskesmas buka 24 jam di semua kecamatan
+official:
+  name: Walikota Contoh Rekaan
+  position: Walikota
+  institution: Kota Rekaan
+  public_official: true
+promise:
+  statement: >-
+    Seluruh puskesmas kecamatan di Kota Rekaan akan melayani 24 jam
+    paling lambat 1 Juli 2026.
+  made_at: "2026-02-10"
+  deadline: "2026-07-01"
+  source_evidence_id: E1
+status: broken
+status_note: >-
+  Per deadline, 3 dari 12 puskesmas beroperasi 24 jam. Target tidak tercapai.
+evidence:
+  - id: E1
+    title: Konferensi pers program kesehatan (rekaman resmi)
+    type: primary_document
+    publisher: Humas Kota Rekaan
+    published_at: "2026-02-10"
+    url: https://example.org/rekaan/konferensi-pers-kesehatan
+    archive_url: https://web.archive.org/web/20260211000000/https://example.org/rekaan/konferensi-pers-kesehatan
+    archived_at: "2026-02-11"
+    sha256: "0000000000000000000000000000000000000000000000000000000000000011"
+  - id: E2
+    title: Data jam operasional puskesmas per 1 Juli 2026
+    type: primary_document
+    publisher: Dinas Kesehatan Kota Rekaan
+    published_at: "2026-07-02"
+    url: https://example.org/dinkes-rekaan/jam-operasional
+    archive_url: https://web.archive.org/web/20260703000000/https://example.org/dinkes-rekaan/jam-operasional
+    archived_at: "2026-07-03"
+    sha256: "0000000000000000000000000000000000000000000000000000000000000012"
+  - id: E3
+    title: Liputan puskesmas 24 jam belum merata
+    type: media
+    publisher: Warta Rekaan
+    published_at: "2026-07-05"
+    url: https://example.com/warta-rekaan/puskesmas-24-jam
+    archive_url: https://web.archive.org/web/20260706000000/https://example.com/warta-rekaan/puskesmas-24-jam
+    archived_at: "2026-07-06"
+    sha256: "0000000000000000000000000000000000000000000000000000000000000013"
+timeline:
+  - date: "2026-02-10"
+    kind: statement
+    summary: Janji disampaikan pada konferensi pers.
+    evidence_ids: [E1]
+  - date: "2026-07-02"
+    kind: update
+    summary: Dinas Kesehatan mencatat 3 dari 12 puskesmas beroperasi 24 jam.
+    evidence_ids: [E2, E3]
+review:
+  reviewers: [reviewer-contoh-1, reviewer-contoh-2]
+  reviewed_at: "2026-07-15"
