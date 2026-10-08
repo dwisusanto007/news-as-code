@@ -1,0 +1,97 @@
+# DRAFT: belum diverifikasi reviewer, belum boleh masuk data/promises/.
+# TODO sebelum dipindah ke data/promises/:
+#   1. Buat snapshot tiap URL (Wayback/archive.ph/perma.cc), lalu isi archive_url, archived_at, sha256.
+#   2. Dua reviewer memeriksa tiap bukti dan mengisi review.reviewers + reviewed_at.
+#   3. Reviewer memutuskan arti "pertengahan tahun" dan apakah tonggak itu dinilai terpisah.
+id: P-2026-0004
+title: Target 82,9 juta penerima MBG pada 2026
+official:
+  name: Dadan Hindayana
+  position: Kepala Badan Gizi Nasional
+  institution: Badan Gizi Nasional (BGN)
+  public_official: true
+promise:
+  statement: >-
+    Setelah target akhir 2025 terlewat, BGN memproyeksikan 82,9 juta penerima
+    manfaat MBG tercapai pada pertengahan 2026, lalu menyebut target itu
+    tercapai pada tahun 2026.
+  made_at: "2026-01-20"
+  deadline: "2026-12-31"
+  source_evidence_id: E1
+status: in_progress
+status_note: >-
+  Per 16 Sep 2026 tercatat 56,99 juta penerima (sementara), 76,45% dari target
+  yang kini 74,56 juta, bukan 82,9 juta. Tonggak pertengahan 2026 terlewati.
+  Angka antar sumber berbeda: BGN/Bakom 61,99 juta (12 Mei), data Kemenkeu 57
+  juta (akhir Agustus) dan 52,4 juta (Januari). Penyebab selisih belum
+  dijelaskan sumber yang dikutip.
+evidence:
+  - id: E1
+    title: Awal 2026, program MBG jangkau hampir 60 juta penerima manfaat
+    type: primary_document
+    publisher: Badan Gizi Nasional
+    published_at: "2026-01-20"
+    url: https://www.bgn.go.id/news/siaran-pers/awal-2026-program-mbg-jangkau-hampir-60-juta-penerima-manfaat
+    archive_url: https://web.archive.org/web/https://www.bgn.go.id/news/siaran-pers/awal-2026-program-mbg-jangkau-hampir-60-juta-penerima-manfaat
+    archived_at: "2026-10-08" # TODO: ganti dengan tanggal snapshot sebenarnya
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000" # TODO
+  - id: E2
+    title: Pemerintah targetkan 82,9 juta anak Indonesia terima MBG pada 2026
+    type: media
+    publisher: ANTARA News
+    published_at: "2026-04-22"
+    url: https://www.antaranews.com/berita/5537885/pemerintah-targetkan-829-juta-anak-indonesia-terima-mbg-pada-2026
+    archive_url: https://web.archive.org/web/https://www.antaranews.com/berita/5537885/pemerintah-targetkan-829-juta-anak-indonesia-terima-mbg-pada-2026
+    archived_at: "2026-10-08" # TODO
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000" # TODO
+  - id: E3
+    title: Penerima manfaat MBG capai 61,9 juta orang
+    type: media
+    publisher: Bisnis.com
+    published_at: "2026-05-13"
+    url: https://kabar24.bisnis.com/read/20260513/15/1973553/penerima-manfaat-mbg-capai-619-juta-orang
+    archive_url: https://web.archive.org/web/https://kabar24.bisnis.com/read/20260513/15/1973553/penerima-manfaat-mbg-capai-619-juta-orang
+    archived_at: "2026-10-08" # TODO
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000" # TODO
+  - id: E4
+    title: Anggaran MBG tembus Rp134,2 triliun hingga Agustus, total ada 57 juta penerima
+    type: media
+    publisher: Katadata
+    published_at: "2026-09-18"
+    url: https://katadata.co.id/finansial/makro/6aace26c229eb/anggaran-mbg-tembus-rp-134-2-triliun-hingga-agustus-total-ada-57-juta-penerima
+    archive_url: https://web.archive.org/web/https://katadata.co.id/finansial/makro/6aace26c229eb/anggaran-mbg-tembus-rp-134-2-triliun-hingga-agustus-total-ada-57-juta-penerima
+    archived_at: "2026-10-08" # TODO
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000" # TODO
+  - id: E5
+    title: Anggaran MBG sudah terserap Rp139,77 triliun, capai 63,89% dari pagu
+    type: media
+    publisher: DDTC News
+    published_at: "2026-09-21"
+    url: https://news.ddtc.co.id/berita/nasional/1822636/anggaran-mbg-sudah-terserap-rp13977-triliun-capai-6389-dari-pagu
+    archive_url: https://web.archive.org/web/https://news.ddtc.co.id/berita/nasional/1822636/anggaran-mbg-sudah-terserap-rp13977-triliun-capai-6389-dari-pagu
+    archived_at: "2026-10-08" # TODO
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000" # TODO
+timeline:
+  - date: "2026-01-20"
+    kind: statement
+    summary: Kepala BGN memaparkan 59,86 juta penerima di 21.102 SPPG kepada Komisi IX DPR, dengan proyeksi 82,9 juta pada pertengahan tahun.
+    evidence_ids: [E1]
+  - date: "2026-04-22"
+    kind: update
+    summary: Kepala BGN menyebut target 82,9 juta tercapai pada tahun 2026, dengan sekitar 62 juta penerima saat itu.
+    evidence_ids: [E2]
+  - date: "2026-05-12"
+    kind: update
+    summary: Bakom melaporkan 61,99 juta penerima (74,8% dari target) di 28.390 SPPG terdaftar, 55,42% di antaranya bersertifikat SLHS.
+    evidence_ids: [E3]
+  - date: "2026-08-31"
+    kind: update
+    summary: Data Kemenkeu mencatat sekitar 57 juta penerima akhir Agustus (46,2 juta siswa, 10,8 juta non-siswa) dan realisasi anggaran Rp134,2 triliun.
+    evidence_ids: [E4]
+  - date: "2026-09-16"
+    kind: setback
+    summary: Tercatat 56,99 juta penerima (sementara), 76,45% dari target 74,56 juta. Realisasi anggaran Rp139,77 triliun dari pagu Rp218,77 triliun.
+    evidence_ids: [E5]
+review:
+  reviewers: []
+  reviewed_at: null

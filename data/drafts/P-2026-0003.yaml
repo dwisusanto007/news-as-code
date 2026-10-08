@@ -1,0 +1,110 @@
+# DRAFT: belum diverifikasi reviewer, belum boleh masuk data/promises/.
+# TODO sebelum dipindah ke data/promises/:
+#   1. Buat snapshot tiap URL (Wayback/archive.ph/perma.cc), lalu isi archive_url, archived_at, sha256.
+#   2. Dua reviewer memeriksa tiap bukti dan mengisi review.reviewers + reviewed_at.
+#   3. Reviewer memutuskan status akhir (usulan saat ini: broken).
+id: P-2026-0003
+title: Target 82,9 juta penerima MBG pada akhir 2025
+official:
+  name: Dadan Hindayana
+  position: Kepala Badan Gizi Nasional
+  institution: Badan Gizi Nasional (BGN)
+  public_official: true
+promise:
+  statement: >-
+    Kepala BGN menyampaikan bahwa atas permintaan Presiden, program Makan
+    Bergizi Gratis dipercepat hingga melayani 82,9 juta penerima manfaat
+    pada akhir tahun 2025.
+  made_at: "2025-08-19"
+  deadline: "2025-12-31"
+  source_evidence_id: E1
+status: broken
+status_note: >-
+  Per 8 Jan 2026 BGN mencatat sekitar 55,1 juta penerima (sekitar 66% dari
+  82,9 juta) dan 59,86 juta per 20 Jan, jadi target tidak tercapai pada
+  tenggat. Konteks: Kepala BGN memakai kata harapan, menyebut 75 juta masih
+  dapat dimaklumi, dan pada 9 Des 2025 sudah memprediksi sekitar 60 juta.
+  Target lalu dipindah ke 2026 (lihat P-2026-0004).
+evidence:
+  - id: E1
+    title: Baru 20 juta yang dapat, Prabowo minta program makan gratis capai 82 juta
+    type: media
+    publisher: detikFinance
+    published_at: "2025-08-19"
+    url: https://finance.detik.com/berita-ekonomi-bisnis/d-8068550/baru-20-juta-yang-dapat-prabowo-minta-program-makan-gratis-capai-82-juta
+    archive_url: https://web.archive.org/web/https://finance.detik.com/berita-ekonomi-bisnis/d-8068550/baru-20-juta-yang-dapat-prabowo-minta-program-makan-gratis-capai-82-juta
+    archived_at: "2026-10-08" # TODO: ganti dengan tanggal snapshot sebenarnya
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000" # TODO
+  - id: E2
+    title: Target 82,9 juta penerima MBG baru tercapai Maret 2026, butuh dana Rp351 triliun
+    type: media
+    publisher: Bisnis.com
+    published_at: "2025-10-21"
+    url: https://ekonomi.bisnis.com/read/20251021/12/1922252/target-829-juta-penerima-mbg-baru-tercapai-maret-2026-butuh-dana-rp351-triliun
+    archive_url: https://web.archive.org/web/https://ekonomi.bisnis.com/read/20251021/12/1922252/target-829-juta-penerima-mbg-baru-tercapai-maret-2026-butuh-dana-rp351-triliun
+    archived_at: "2026-10-08" # TODO
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000" # TODO
+  - id: E3
+    title: Presiden Prabowo pimpin Ratas di Istana, optimistis target 82,9 juta penerima manfaat MBG tercapai
+    type: primary_document
+    publisher: Sekretariat Kabinet RI
+    published_at: "2025-10-29"
+    url: https://setkab.go.id/3yw7
+    archive_url: https://web.archive.org/web/https://setkab.go.id/3yw7
+    archived_at: "2026-10-08" # TODO
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000" # TODO
+  - id: E4
+    title: Tak capai target, jumlah penerima manfaat MBG diprediksi hanya 72%
+    type: media
+    publisher: DDTC News
+    published_at: "2025-12-09"
+    url: https://news.ddtc.co.id/berita/nasional/1815779/tak-capai-target-jumlah-penerima-manfaat-mbg-diprediksi-hanya-72
+    archive_url: https://web.archive.org/web/https://news.ddtc.co.id/berita/nasional/1815779/tak-capai-target-jumlah-penerima-manfaat-mbg-diprediksi-hanya-72
+    archived_at: "2026-10-08" # TODO
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000" # TODO
+  - id: E5
+    title: BGN targetkan 82,9 juta penerima manfaat MBG di 2026
+    type: media
+    publisher: Okezone
+    published_at: "2026-01-08"
+    url: https://economy.okezone.com/read/2026/01/08/320/3194299/bgn-targetkan-82-9-juta-penerima-manfaat-mbg-di-2026
+    archive_url: https://web.archive.org/web/https://economy.okezone.com/read/2026/01/08/320/3194299/bgn-targetkan-82-9-juta-penerima-manfaat-mbg-di-2026
+    archived_at: "2026-10-08" # TODO
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000" # TODO
+  - id: E6
+    title: Awal 2026, program MBG jangkau hampir 60 juta penerima manfaat
+    type: primary_document
+    publisher: Badan Gizi Nasional
+    published_at: "2026-01-20"
+    url: https://www.bgn.go.id/news/siaran-pers/awal-2026-program-mbg-jangkau-hampir-60-juta-penerima-manfaat
+    archive_url: https://web.archive.org/web/https://www.bgn.go.id/news/siaran-pers/awal-2026-program-mbg-jangkau-hampir-60-juta-penerima-manfaat
+    archived_at: "2026-10-08" # TODO
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000" # TODO
+timeline:
+  - date: "2025-08-19"
+    kind: statement
+    summary: Kepala BGN menyampaikan permintaan Presiden untuk mempercepat MBG ke 82,9 juta penerima pada akhir 2025. Saat itu sekitar 20,5 juta penerima di 5.905 SPPG.
+    evidence_ids: [E1]
+  - date: "2025-10-21"
+    kind: update
+    summary: Menko Pangan memperkirakan 82,9 juta baru tercapai Maret 2026. Wakil Kepala BGN menyebut kebutuhan dana Rp351 triliun.
+    evidence_ids: [E2]
+  - date: "2025-10-29"
+    kind: update
+    summary: Dalam rapat terbatas, Kepala BGN masih mengejar 82,9 juta di akhir tahun. Saat itu potensi layanan 39,5 juta penerima di 13.514 SPPG, dan ia menyebut 75 juta masih dapat dimaklumi Presiden.
+    evidence_ids: [E3]
+  - date: "2025-12-09"
+    kind: setback
+    summary: Kepala BGN memprediksi sekitar 60 juta penerima hingga akhir 2025 (72% target). Saat itu 49 juta penerima di 17.060 SPPG.
+    evidence_ids: [E4]
+  - date: "2026-01-08"
+    kind: setback
+    summary: BGN mencatat sekitar 55,1 juta penerima di 19.188 SPPG, dan target 82,9 juta dialihkan ke tahun 2026.
+    evidence_ids: [E5]
+  - date: "2026-01-20"
+    kind: update
+    summary: BGN melaporkan 59,86 juta penerima di 21.102 SPPG kepada Komisi IX DPR.
+    evidence_ids: [E6]
+review:
+  reviewers: []
+  reviewed_at: null
