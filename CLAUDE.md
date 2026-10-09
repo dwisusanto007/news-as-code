@@ -38,10 +38,14 @@ Java/Spring Boot dan memilih tanpa tooling kode untuk awal; jangan tambah kerumi
   - `P-2026-0003` penerima 82,9 juta akhir 2025 (usulan `partially_fulfilled`, 66%) -> `P-2026-0004` penerima 82,9 juta 2026 (`in_progress`)
   - `P-2026-0005` SPPG 31.000 akhir 2025 (usulan `partially_fulfilled`, 62%) -> `P-2026-0006` SPPG 32.000 akhir April 2026 (usulan `partially_fulfilled`, 87%)
   - `P-2026-0007` anggaran MBG 2026 Rp335 T dan revisinya (`in_progress`); cakupan "MBG" vs "total BGN" belum dipisahkan
-- Temuan: Katadata (18 Jun 2026) menyebut Dadan Hindayana "pimpinan sebelumnya" BGN; verifikasi pergantian pimpinan (menentukan penanggung jawab tiap janji).
+- Terverifikasi lewat kliping (`clippings/mbg.md`): Dadan Hindayana dicopot 2 Jun 2026 dan ditetapkan tersangka Kejagung 3 Jun (dugaan, belum putusan); Nanik S Deyang Kepala BGN 8 Jun-22 Jul 2026; Sudaryono Kepala BGN sejak 22 Jul. BGN menghapus target penerima (21 Jul 2026), yang berdampak ke P-0004. Insentif SPPG Rp6 juta/hari diganti Rp2.000/porsi (5 Okt 2026). Draf P-0003 s.d. 0007 perlu penyesuaian penanggung jawab dan status.
 - Pemicu usulan dari publik: formulir Issue "Usulkan janji". Ubah isi issue jadi draf YAML, jangan menyalin mentah.
 - Sisa untuk draf MBG (lihat komentar TODO di tiap file): snapshot arsip + hash tiap bukti, cocokkan kutipan ke sumber asli, kirim permintaan hak jawab ke BGN, rekonsiliasi definisi "penerima manfaat" dan angka 61,99 vs 57 juta, cari sumber revisi target 74,56 juta, cari bukti primer janji Agustus 2025 (rekaman/transkrip) dan pembanding independen (BPK/BPS), dua reviewer.
 - Setelan GitHub (branch protection, variabel `SITE_BASE_URL`) dilakukan manual oleh pemilik repo.
+
+## Fokus saat ini
+
+Kumpulkan kliping berita, kelompokkan per topik, urut kronologis: `clippings/<program>.md`. Aturan hash/reviewer/hak jawab ditunda sampai ada entri yang siap terbit.
 
 ## Ide berikutnya
 
